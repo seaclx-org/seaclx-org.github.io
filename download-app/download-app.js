@@ -2,7 +2,7 @@ function getAppUrl() {
   const userAgent = navigator.userAgent || window.opera;
 
   if (/android/i.test(userAgent)) {
-    return "https://play.google.com/store/apps/details?id=seaclx.streetlii";
+    return "market://details?id=seaclx.streetlii";
   }
 
   if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
