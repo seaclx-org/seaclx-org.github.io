@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "seaclx.streetlii.dev",
+      "sha256_cert_fingerprints": [
+        "A6:AA:39:49:8E:B7:06:D9:7C:FF:1E:68:16:26:3A:44:81:65:C4:DB:FD:6E:DC:BD:43:6D:3A:E2:11:5E:F8:90"
+      ]
+    }
+  }
+]
