@@ -7,8 +7,11 @@
           "FN44473G67.seaclx.streetlii.dev",
           "FN44473G67.seaclx.streetlii"
         ],
-        "paths": [
-          "/account-deletion"
+        "components": [
+          {
+            "/": "/*",
+            "comment": "Matches any URL with a path that starts with /."
+          }
         ]
       }
     ]
