@@ -1,3 +1,5 @@
 <script>
-  location.assign("./download-app/index.html", "_self");
+  if (["index.html", "/"].find((p) => location.pathname.endsWith(p))) {
+    location.assign("./download-app/index.html", "_self");
+  }
 </script>
