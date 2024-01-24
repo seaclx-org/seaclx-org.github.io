@@ -1,8 +1,11 @@
 const url = new URL(location.href);
 
 const storeId = url.searchParams.get("storeId");
+const dev = url.searchParams.get("dev");
 
-const custom = `streetlii://StoreDetails?storeId=${storeId}`;
+const custom = `${
+  dev == "true" ? "streetliiDev" : "streetlii"
+}://StoreDetails?storeId=${storeId}`;
 const alt = "../download-app/index.html";
 let timer;
 let heartbeat;
