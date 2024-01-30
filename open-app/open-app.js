@@ -1,11 +1,25 @@
-const url = new URL(location.href);
+function getCustomUrl() {
+  const url = new URL(location.href);
+  const storeId = url.searchParams.get("storeId");
+  const productId = url.searchParams.get("productId");
+  const promotionId = url.searchParams.get("promotionId");
+  const dev = url.searchParams.get("dev");
+  if (storeId) {
+    return `${
+      dev == "true" ? "streetliiDev" : "streetlii"
+    }://StoreDetails?storeId=${storeId}`;
+  } else if (productId) {
+    return `${
+      dev == "true" ? "streetliiDev" : "streetlii"
+    }://ProductDetails?productId=${productId}`;
+  } else if (promotionId) {
+    return `${
+      dev == "true" ? "streetliiDev" : "streetlii"
+    }://PromotionDetails?promotionId=${promotionId}`;
+  }
+}
 
-const storeId = url.searchParams.get("storeId");
-const dev = url.searchParams.get("dev");
-
-const custom = `${
-  dev == "true" ? "streetliiDev" : "streetlii"
-}://StoreDetails?storeId=${storeId}`;
+const custom = getCustomUrl();
 const alt = "../download-app/index.html";
 let timer;
 let heartbeat;
