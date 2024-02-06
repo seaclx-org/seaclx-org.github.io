@@ -6,15 +6,15 @@ function getCustomUrl() {
   const dev = url.searchParams.get("dev");
   if (storeId) {
     return `${
-      dev == "true" ? "streetliiDev" : "streetlii"
+      dev == "true" ? "streetliidev" : "streetlii"
     }://StoreDetails?storeId=${storeId}`;
   } else if (productId) {
     return `${
-      dev == "true" ? "streetliiDev" : "streetlii"
+      dev == "true" ? "streetliidev" : "streetlii"
     }://ProductDetails?productId=${productId}`;
   } else if (promotionId) {
     return `${
-      dev == "true" ? "streetliiDev" : "streetlii"
+      dev == "true" ? "streetliidev" : "streetlii"
     }://PromotionDetails?promotionId=${promotionId}`;
   }
 }
