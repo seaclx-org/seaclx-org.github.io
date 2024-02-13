@@ -2,13 +2,12 @@ function getCustomUrl() {
   const url = new URL(location.href);
   const storeId = url.searchParams.get("storeId");
   const productId = url.searchParams.get("productId");
-  const promotionId = url.searchParams.get("promotionId");
   const promotionType = url.searchParams.get("promotionType");
   const dev = url.searchParams.get("dev");
   if (promotionType && storeId) {
     return `${
       dev == "true" ? "streetliidev" : "streetlii"
-    }://Promotions?promotionType=${promotionType}&storeId=${storeId}`;
+    }://AllPromotions?promotionType=${promotionType}&storeId=${storeId}`;
   } else if (storeId) {
     return `${
       dev == "true" ? "streetliidev" : "streetlii"
@@ -17,10 +16,6 @@ function getCustomUrl() {
     return `${
       dev == "true" ? "streetliidev" : "streetlii"
     }://ProductDetails?productId=${productId}`;
-  } else if (promotionId) {
-    return `${
-      dev == "true" ? "streetliidev" : "streetlii"
-    }://Promotions?promotionIds=${promotionId}`;
   }
 }
 
