@@ -3,8 +3,13 @@ function getCustomUrl() {
   const storeId = url.searchParams.get("storeId");
   const productId = url.searchParams.get("productId");
   const promotionId = url.searchParams.get("promotionId");
+  const promotionType = url.searchParams.get("promotionType");
   const dev = url.searchParams.get("dev");
-  if (storeId) {
+  if (promotionType && storeId) {
+    return `${
+      dev == "true" ? "streetliidev" : "streetlii"
+    }://Promotions?promotionType=${promotionType}&storeId=${storeId}`;
+  } else if (storeId) {
     return `${
       dev == "true" ? "streetliidev" : "streetlii"
     }://StoreDetails?storeId=${storeId}`;
@@ -15,7 +20,7 @@ function getCustomUrl() {
   } else if (promotionId) {
     return `${
       dev == "true" ? "streetliidev" : "streetlii"
-    }://PromotionDetails?promotionId=${promotionId}`;
+    }://Promotions?promotionIds=${promotionId}`;
   }
 }
 
